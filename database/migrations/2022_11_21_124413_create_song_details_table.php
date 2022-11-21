@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('song_details', function (Blueprint $table) {
             $table->id();
-            
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestampTz('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+
+            $table->text('lyrics')->nullable();
+            $table->date('published_at')->nullable();
 
             $table->timestampTz('created_at', 6)->nullable();
             $table->bigInteger('created_by')->nullable();
@@ -38,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('song_details');
     }
 };

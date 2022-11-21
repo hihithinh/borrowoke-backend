@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_songs', function (Blueprint $table) {
             $table->id();
-            
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestampTz('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+
+            $table->bigInteger('user_id');
+            $table->bigInteger('song_id');
+            $table->boolean('can_sing');
+            $table->integer('difficulty');
+            $table->boolean('is_like');
 
             $table->timestampTz('created_at', 6)->nullable();
             $table->bigInteger('created_by')->nullable();
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_songs');
     }
 };
