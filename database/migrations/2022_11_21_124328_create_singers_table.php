@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->text('name');
+            $table->text('name_search');
 
             $table->timestampTz('created_at', 6)->nullable();
             $table->bigInteger('created_by')->nullable();

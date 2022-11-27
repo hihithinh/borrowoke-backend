@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->text('name')->nullable();
-            $table->bigInteger('singer_id')->nullable();
-            $table->bigInteger('writer_id')->nullable();
+            $table->text('name_search')->nullable();
             $table->bigInteger('category_id')->nullable();
             $table->boolean('has_male')->nullable();
             $table->boolean('has_female')->nullable();
